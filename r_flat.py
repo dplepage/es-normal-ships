@@ -1,5 +1,5 @@
 '''
-blender -b <blend file> -P r_flat.py -f 1 -o flat#.png
+blender -b <blend file> -P r_flat.py -o flat#.png -f 1
 
 Renders the given file without any lights except an ambient enviromental
 light. The above would save to flat1.png

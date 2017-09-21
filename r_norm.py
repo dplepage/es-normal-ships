@@ -1,5 +1,5 @@
 '''
-blender -b <blend file> -P r_norm.py -f 1 -o norm#.png
+blender -b <blend file> -P r_norm.py -o norm#.png -f 1
 
 Renders the given file as a normal map. The above would save to norm1.png
 
@@ -22,7 +22,7 @@ mat.use_shadeless = True # ignore lighting
 s = bpy.context.scene
 # Apply material to all meshes in the scene
 for ob in s.objects:
-    if ob.type != 'MESH':
+    if ob.type not in ['MESH', 'CURVE']:
         continue
     # Make sure to account for objects w/ 0 materials OR >1 materials
     n = len(ob.data.materials)
